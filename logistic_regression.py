@@ -17,8 +17,9 @@ def logistic_regression(X, y, learning_rate=0.1, n_iter=1000):
     return theta
 
 # Example Usage
-X = 2 * np.random.rand(100, 1)
-y = (4 + 3 * X + np.random.randn(100, 1) > 5).astype(int)  # Creating binary labels
+X = 2 * np.random.rand(100, 5)
+y = (4 + 3 * X[:,0] + np.random.randn(100) > 5).astype(int).reshape(-1,1)  # Creating binary labels
 theta_best = logistic_regression(X, y)
+# print(y)
 print("Logistic Regression coefficients:", theta_best.flatten())
 
